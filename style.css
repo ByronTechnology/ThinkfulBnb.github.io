@@ -2,6 +2,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  
 }
 
 h2 {
@@ -31,34 +32,34 @@ section.alternate-background {
 }
 
 main img {
-  width: 100%;
-  margin-bottom: 10px;
+  width: 100px;
 }
 
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .item {
   flex: 1;
   margin: 10px;
-  flex-direction: column;
 }
 
 .item-double {
   flex: 2;
-  flex-direction: column;
+}
+
+.item img {
+  width: 100%;
 }
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 3px 20px;
+  padding: 20px 20px 0 20px;
   text-align: center;
 }
 
@@ -68,10 +69,12 @@ header {
   color: #fff;
 }
 
-#menu{
+header nav ul {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
 }
 
 header nav ul li {
@@ -97,6 +100,11 @@ form {
 
 form label {
   font-weight: bold;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
 }
 
 form select,
@@ -127,97 +135,63 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 480px) {
+  
+  /* ------- Responsive Header ------ */
 
-@media screen and (max-width: 400px) {
-  .logo{
-    font-size: 50px;
-  }
-}
-
-@media screen and (min-width: 480px){
-  menu{
-    justify-content: end;
-  }
-  header{
+  header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  .logo{
-    width: 50%;
+
+  /* ------- Responsive Form ------ */
+
+  form {
     display: flex;
-  }
-  #teller{
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .group{
+  form select,
+  form input {
+    margin-bottom: 0;
+    width: 180px;
+}
+
+  form div {
+    display: flex;
     flex-direction: column;
-    justify-content: end;
-    flex:1;
-  }
-  form{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
   }
 
-  button{
-    flex: 1;
-  }
-
-  .about{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-  }
-
-  #about p{
+  form button {
     display: flex;
     justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    padding: 5px;
-
+    align-items: center;
+    padding: 15px 50px;
   }
 
-  #about img{
-    width: 25%;
-    padding: 5px;;
-    height: 25%;
-  } 
+  /* ------- Responsive Groups & Items ------ */
 
-
-  #fourimages{
+  .group {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #ideas .group {
+    min-height: 100%;
+    display: flex;
     flex-wrap: wrap;
-    width: 100%;
-  }
-  #fourimages .group2{
-    max-width: 48%;
-    width: auto;
-    height: auto;
-    padding: 1%;
-  }
-
-  #host{
-    display: flex;
     flex-direction: row;
-    flex: 1;
-  }
-  #host-text{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    padding: 5px;
   }
 
-  #host img{
-    max-width: 50%;
-    width: auto;
-    height: 50%;
+  #ideas div {
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    justify-content: center;
+    flex-direction: column;
   }
+
 }
