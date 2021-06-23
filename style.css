@@ -135,7 +135,7 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px) {
+@media (min-width: 480px) {
   
   /* ------- Responsive Header ------ */
 
